@@ -1,1 +1,1 @@
-gunzip *
+gunzip * # Unzip fastq.gz file
