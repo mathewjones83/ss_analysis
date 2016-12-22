@@ -1,0 +1,13 @@
+# How to go from unzipped fastq to sorted indexed bam using bwa-mem
+
+# First index your reference file using bwa
+
+bwa index -a bwtsw k03455.1.fasta
+
+# Next perform bwa-mem on paired fastq files with an indexed reference (index must have a .fai partner file)
+
+bwa mem -M -t 16 ssvii/k03455.1.fasta SUC038007_S1_L001_R1_001.fastq SUC038007_S1_L001_R2_001.fastq > ssix_1_bwaalign.sam &
+
+# Then convert sam to bam and index bam
+
+samtools view -bS nxti_2_bwaalign.sam | samtools sort - nxti_2_bwaalign samtools index nxti_2_bwaalign.bam nxti_2_bwaalign.bai &
