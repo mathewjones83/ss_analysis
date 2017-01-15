@@ -1,0 +1,2 @@
+gunzip * # Unzip fastq.gz file
+cutadapt -a ACACTCTTTCCCTACACGACGCTCTTCCGATCT -A GATCGGAAGAGCGGTTCAGCAGGAATGCCGAG -o ../WTCHG_122783_02_1_trim.fastq -p ../WTCHG_122783_02_2_trim.fastq ../WTCHG_122783_02_1.fastq ../WTCHG_122783_02_2.fastq # Trim universal illumina adapters from fastq file
