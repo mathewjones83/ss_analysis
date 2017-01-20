@@ -10,4 +10,4 @@ bwa mem -M -t 16 ssvii/k03455.1.fasta SUC038007_S1_L001_R1_001.fastq SUC038007_S
 
 # Then convert sam to bam and index bam
 
-samtools view -bS nxti_2_bwaalign.sam | samtools sort - nxti_2_bwaalign samtools index nxti_2_bwaalign.bam nxti_2_bwaalign.bai &
+samtools view -bS nxti_2_bwaalign.sam | samtools sort - nxti_2_bwaalign ; samtools index nxti_2_bwaalign.bam nxti_2_bwaalign.bai &
